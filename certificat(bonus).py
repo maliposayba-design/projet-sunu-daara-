@@ -1,15 +1,18 @@
+from progression import evaluer_progression
 def generer_certificat(eleve):
+    niveau = evaluer_progression(eleve)
+    if niveau == 5:
 
-    print("\n==============================")
-    print(" CERTIFICAT DE FIN D'ÉTUDE")
-    print("==============================")
+        print("\n========================")
+        print("CERTIFICAT DE FIN D'ÉTUDE")
+        print("========================")
 
-    print("Nom :", eleve["nom"])
-    print("Niveau atteint :", eleve["niveau"])
+        print("Nom :", eleve["nom"])
+        print("Niveau :", niveau)
 
-    if eleve["niveau"] == 5:
-        print("Statut : Formation terminée")
+        print("\nFélicitations pour être arrivé/e à la fin de vos études!")
     else:
-        print("Statut : En cours")
-
-    print("\nFélicitations !")
+        print(
+            "Certificat indisponible : "
+            "niveau final non atteint."
+        )
