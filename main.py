@@ -10,6 +10,7 @@ from certificat_bonus import generer_certificat
 
 from affichage import vider_ecran
 from affichage import menu
+from affichage import menu_exam
 continuer = True
 
 while continuer:
@@ -31,22 +32,22 @@ while continuer:
          if eleve["id"] == id_eleve:
              trouve = True
              enregistrer_sourates(eleve)
-         if trouve == False:
-           print("Élève introuvable.")
+        if trouve == False:
+            print("Élève introuvable.")
         input("\nAppuyez sur Entree pour continuer...")
         vider_ecran()
 
     elif choix == "3":
         afficher_eleves()
         id_eleve = int(input("ID élève : "))
-
+        trouve= False
         for eleve in eleves.eleves:
 
             if eleve["id"] == id_eleve:
                   trouve = True
                   niveau = evaluer_progression(eleve)
                   print( "Niveau :", niveau)
-            if trouve == False:
+        if trouve == False:
              print("Élève introuvable.")
         input("\nAppuyez sur Entree pour continuer...")
         vider_ecran()
@@ -70,7 +71,7 @@ while continuer:
                 "ID élève : "
             )
         )
-
+        trouve= False
         for eleve in eleves.eleves:
 
             if eleve["id"] == id_eleve:
@@ -80,11 +81,14 @@ while continuer:
                     generer_certificat(eleve)
                  else:
                     print("Niveau requis non atteint.")
-            if trouve == False:
+        if trouve == False:
              print("Élève introuvable.")
         input("\nAppuyez sur Entree pour continuer...")
         vider_ecran()
     elif choix == "8":
+        vider_ecran()
+        menu_exam()
+    elif choix == "9":
         print("Au revoir !")
         continuer = False
         input("\nAppuyez sur Entree pour continuer...")
