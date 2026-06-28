@@ -25,6 +25,9 @@ def menu():
     print("8. Quitter")
 
     return input("Votre choix : ")
+def vider_ecran():
+    import os
+    os.system("cls" if os.name == "nt" else "clear")    
 
 
 continuer = True
@@ -34,9 +37,9 @@ while continuer:
     choix = menu()
 
     if choix == "1":
-
-        ajouter_eleve()
-
+         ajouter_eleve()
+         input("\nAppuyez sur Entree pour continuer...")
+         vider_ecran()
     elif choix == "2":
 
         id_eleve = int(input("ID élève : "))
@@ -50,7 +53,8 @@ while continuer:
              enregistrer_sourates(eleve)
          if trouve == False:
            print("Élève introuvable.")
-
+        input("\nAppuyez sur Entree pour continuer...")
+        vider_ecran()
 
     elif choix == "3":
 
@@ -64,16 +68,21 @@ while continuer:
                   print( "Niveau :", niveau)
             if trouve == False:
              print("Élève introuvable.")
+        input("\nAppuyez sur Entree pour continuer...")
+        vider_ecran()
     elif choix == "4":
         afficher_classement(eleves.eleves)
-    
+        input("\nAppuyez sur Entree pour continuer...")
+        vider_ecran()
     elif choix == "5":
         gerer_presences(eleves.eleves)
-
+        input("\nAppuyez sur Entree pour continuer...")
+        vider_ecran()
     elif choix == "6":
 
         afficher_eleves()
-
+        input("\nAppuyez sur Entree pour continuer...")
+        vider_ecran()
     elif choix == "7":
 
         id_eleve = int(
@@ -93,8 +102,12 @@ while continuer:
                     print("Niveau requis non atteint.")
             if trouve == False:
              print("Élève introuvable.")
+        input("\nAppuyez sur Entree pour continuer...")
+        vider_ecran()
     elif choix == "8":
         print("Au revoir !")
         continuer = False
+        input("\nAppuyez sur Entree pour continuer...")
+        vider_ecran()
     else:
         print( "Choix invalide.")
