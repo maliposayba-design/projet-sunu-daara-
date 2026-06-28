@@ -41,7 +41,7 @@ while continuer:
          input("\nAppuyez sur Entree pour continuer...")
          vider_ecran()
     elif choix == "2":
-
+        afficher_eleves()
         id_eleve = int(input("ID élève : "))
 
         trouve = False
@@ -57,7 +57,7 @@ while continuer:
         vider_ecran()
 
     elif choix == "3":
-
+        afficher_eleves()
         id_eleve = int(input("ID élève : "))
 
         for eleve in eleves.eleves:
@@ -84,7 +84,7 @@ while continuer:
         input("\nAppuyez sur Entree pour continuer...")
         vider_ecran()
     elif choix == "7":
-
+        afficher_eleves()
         id_eleve = int(
             input(
                 "ID élève : "

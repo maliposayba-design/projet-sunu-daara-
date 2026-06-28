@@ -8,8 +8,8 @@ Zeynab Ba
 Fatoumata Diouf 
 
 FONCTIONNALITES IMPLEMENTES:
-[] ajouter un eleve
-[] enregistrer les sourates mémorisées
+[x] ajouter un eleve
+[x] enregistrer les sourates mémorisées
 [x] evaluer la progression(niveau)
-[] afficher le niveau des élèves
-[] Gérer les présences quotidiennes
+[x] afficher le niveau des élèves
+[x] Gérer les présences quotidiennes
