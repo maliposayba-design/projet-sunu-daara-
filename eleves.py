@@ -4,7 +4,7 @@
 # ============================================
 
 from datetime import date
-
+from progression import evaluer_progression
 # Liste qui stocke tous les élèves en mémoire
 eleves = []
 
@@ -58,11 +58,21 @@ def ajouter_eleve():
 def afficher_eleves():
     """Affiche tous les élèves enregistrés."""
     print("\n--- Liste des élèves ---")
+
     if not eleves:
         print("Aucun élève enregistré pour l'instant.")
         return
-
     for eleve in eleves:
-        print("[" + str(eleve['id']) + "] " + eleve['nom'] + " | Âge : " + str(eleve['age']) + " ans | Inscrit le : " + eleve['date_inscription'])
+        # Calcul du niveau de cet élève
+        niveau = evaluer_progression(eleve)
+        print("\n----------------------------")
+        print("[", eleve["id"], "]")
+        print("Élève :", eleve["nom"])
+        print("Âge :", eleve["age"], "ans")
+        print("Date d'inscription :",eleve["date_inscription"])
+        print("Niveau actuel :", niveau)
+        print(
+            "Sourates mémorisées :",eleve["sourates"],"/114")
+        print("----------------------------")
 
 
