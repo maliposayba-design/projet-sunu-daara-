@@ -34,9 +34,12 @@ def ajouter_eleve():
         print("Erreur : l'âge doit être un nombre positif.")
         return
 
-    # Date d'inscription (aujourd'hui automatiquement)
-    date_inscription = date.today().strftime("%d/%m/%Y")
-
+    # Saisie manuelle de la date d'inscription
+    date_inscription = input("Date d'inscription (ex: 28/06/2026) : ").strip()
+    if date_inscription == "":
+        print("Erreur : la date ne peut pas être vide.")
+        return
+    
     # Création du dictionnaire représentant l'élève
     eleve = {
         "id": len(eleves) + 1,
