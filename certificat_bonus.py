@@ -4,7 +4,7 @@ def generer_certificat(eleve):
     if niveau == 5:
 
         print("\n========================")
-        print("CERTIFICAT DE FIN D'ÉTUDE")
+        print("CERTIFICAT DE FIN D'ÉTUDES DU DAARA")
         print("========================")
 
         print("Nom :", eleve["nom"])

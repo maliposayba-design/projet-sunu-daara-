@@ -28,8 +28,8 @@ def calcul_duree(eleve):
 
     return duree
 
-def evaluer_progression(eleve, duree):
-
+def evaluer_progression(eleve):
+    duree = calcul_duree(eleve)
     if eleve["sourates"] >0 and eleve["sourates"]<=1 and duree<=3:
         niveau = 1
 
@@ -46,5 +46,6 @@ def evaluer_progression(eleve, duree):
         niveau = 5
     
     else:
+        niveau = 0
         print("progression anormale")
     return niveau
